@@ -6,7 +6,7 @@ module Metadown
     end
 
     def parse
-      @text =~ /^(---\s*\n.*?\n?)^(---\s*$\n?)/m
+      @text =~ /^(+++\s*\n.*?\n?)^(+++\s*$\n?)/m
       @mtext = YAML.load($1) if $1
     end
   end
