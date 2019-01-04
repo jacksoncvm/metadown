@@ -11,7 +11,7 @@ module Metadown
     # to the whole text before anything else kicks off, which
     # means we can snag out the YAML at the beginning.
     def preprocess(full_document)
-      full_document =~ /^(+++\s*\n.*?\n?)^(+++\s*$\n?)/m
+      full_document =~ /^(\+\+\+\s*\n.*?\n?)^(\+\+\+\s*$\n?)/m
       @metadata = YAML.load($1) if $1
 
       $' or full_document
